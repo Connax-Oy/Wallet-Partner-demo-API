@@ -26,9 +26,10 @@ code to the Lambda function.
 ```
 pip install --target=./package/ redis
 cd package
-zip -r ../deployment_package.zip
+zip -r ../deployment_package.zip .
+cd ../src
+zip ../deployment_package.zip lambda_function.py config.py
 cd ..
-zip deployment_package.zip src/lambda_function.py src/config.py
 ```
 
 - Upload deployment_package.zip
@@ -43,13 +44,17 @@ be located inside `python/` directory.
 
 ```
 pip install --target=./redis/python/ redis
-zip -r redis.zip redis
+cd redis
+zip -r ../redis.zip .
+cd ..
 ```
 
 - Upload this .zip archive as a layer **redis**.
-- Create a .zip archive with the source code:
+- Create a .zip archive with the source code files:
 ```
-zip -r lambda.zip src
+cd src
+zip -r ../lambda.zip .
+cd ..
 ```
 - Upload the source code to the Lambda function.
 - Add **redis** layer to the Lambda function
