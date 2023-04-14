@@ -8,7 +8,41 @@ POST
 - `token`: string
 
 ### Responses
-| Code | Description                      | Example value |
-|------|----------------------------------|---------------|
-| 200  | Success                          | <code>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"status": "success",<br>&nbsp;&nbsp;&nbsp;&nbsp;"code": 200,<br>&nbsp;&nbsp;&nbsp;&nbsp;"payload": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"data": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"primaryFields": [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"changeMessage": "New card %@",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"key": "serialnumber",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"label": "Serial number",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"value": {{serial_number}}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;"serial_number": {{serial_number}}<br>}</code> |
-| 200  | Failure: serial number not found | <code>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"status": "error",<br>&nbsp;&nbsp;&nbsp;&nbsp;"code": 404<br>}</code> |
+<table>
+<tbody>
+<tr>
+<td>Code</td><td>Description</td><td>Example value</td>
+</tr><tr>
+<td> 200 </td>
+<td> Success </td>
+<td> <pre>
+{
+    "status": "success",
+    "code": 200,
+    "payload": {
+        "data": {
+            "primaryFields": [
+                {
+                    "changeMessage": "New card %@",
+                    "key": "serialnumber",
+                    "label": "Serial number",
+                    "value": {{serial_number}}
+                }
+            ]
+        }
+    },
+    "serial_number": {{serial_number}}
+}
+</pre> </td>
+</tr><tr>
+<td> 200 </td>
+<td> Failure: serial number not found </td>
+<td> <pre>
+{
+    "status": "error",
+    "code": 404
+}
+</pre> </td>
+</tr>
+</tbody>
+</table>
