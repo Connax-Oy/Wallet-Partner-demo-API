@@ -3,6 +3,7 @@
 
 ## MemoryDB Redis cache
 
+- Create new MemoryDB cluster
 - Choose the VPC and its subnets
 - Choose the default security group.
 - Encryption in transit disabled. ACL open-access.
